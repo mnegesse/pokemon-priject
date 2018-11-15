@@ -1,0 +1,104 @@
+body {
+
+}
+.trainme {
+  animation-name: zoomin;
+  animation-duration: 4s;
+  height: 400px;
+  width:250px;
+  margin-left: 40%;
+}
+.about {
+  animation-name: fadein;
+  animation-duration: 5s;
+  margin-left: 40%;
+  font-size: 30px;
+  margin-bottom:px;
+  align-items: center;
+}
+.first {
+  background-color: red;
+  height:500px;
+  width:100%;
+
+}
+.second {
+  height: 500px;
+  width: 100%;
+}
+.third{
+  background-color: red;
+  height: 400px;
+  width:100%;
+}
+.firstsub{
+  float: left;
+  width: 49%;
+  border-right: 1px solid white;
+
+}
+
+.pikabt{
+  animation-name: slideInRight;
+  animation-duration: 3s;
+  font-size: 30px;
+  font-family: fantasy;
+  color: white;
+
+}
+ul{
+  list-style-type: none;
+}
+.firstsub2{
+  float: right;
+  width: 50%;
+
+}
+.imgpik{
+  animation-name: slideInLeft;
+  animation-duration: 3s;
+  height:600px;
+  width:500px
+
+}
+@keyframes zoomin {
+  0%{
+    transform: scale(0);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+}
+@keyframes fadein {
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
