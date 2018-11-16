@@ -3,63 +3,84 @@ body {
 }
 .trainme {
   animation-name: zoomin;
-  animation-duration: 4s;
+  animation-duration: 2s;
   height: 400px;
   width:250px;
   margin-left: 40%;
 }
 .about {
   animation-name: fadein;
-  animation-duration: 5s;
+  animation-duration: 2s;
   margin-left: 40%;
   font-size: 30px;
+  font-family: fantasy;
   margin-bottom:px;
   align-items: center;
 }
 .first {
   background-color: red;
-  height:500px;
+  height:400px;
   width:100%;
-
+  display: inline-table;
 }
 .second {
-  height: 500px;
+  height: 400px;
   width: 100%;
+  display: inline-table;
 }
 .third{
   background-color: red;
   height: 400px;
   width:100%;
 }
+.secondsub{
+  float: left;
+  width:50%;
+}
 .firstsub{
   float: left;
-  width: 49%;
-  border-right: 1px solid white;
+  width: 50%;
 
+}
+.foot{
+  height: 200px;
+  width: 100%;
+  font-size: 30px;
+  font-family: fantasy;
 }
 
 .pikabt{
-  animation-name: slideInRight;
-  animation-duration: 3s;
+  animation: slideInRight 1s forwards;
   font-size: 30px;
   font-family: fantasy;
   color: white;
-
+}
+.secabt {
+  animation: slideInRight 1s forwards;
+  font-size: 30px;
+  font-family: fantasy;
+  color: black;
 }
 ul{
   list-style-type: none;
 }
 .firstsub2{
-  float: right;
-  width: 50%;
+  float:right;
+  width : 49%;
+  border-left: 1px solid white;
+}
 
+.secondsub2{
+  float:right;
+  width : 49%;
+  border-left: 1px solid red;
 }
 .imgpik{
   animation-name: slideInLeft;
-  animation-duration: 3s;
-  height:600px;
-  width:500px
-
+  animation-duration: 1s;
+  height:300px;
+  width:300px;
+  margin-left: 100px;
 }
 @keyframes zoomin {
   0%{
