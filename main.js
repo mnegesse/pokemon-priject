@@ -7,6 +7,8 @@ let namePickachu;
 let imagePickachu;
 let i;
 let abilityarrey;
+let imageid1;
+
 
 let nameSecpoke;
 let defenceSecpoke;
@@ -26,6 +28,7 @@ let imageThirdpoke;
 let j;
 let abilityarrey2;
 
+let pickachu;
 
 axios.get("http://fizal.me/pokeapi/api/v2/id/27.json")
 .then(thirdpoke);
@@ -34,37 +37,67 @@ function thirdpoke(response){
   nameThirdpoke = response.data.name;
   defenceThirdpoke = response.data.stats[3].base_stat;
   attackThirdpoke = response.data.stats[4].base_stat;
-  let i = [];
-  abilityThirdpoke1 = response.data.abilities[0].ability.name;
-  abilityThirdpoke2 = response.data.abilities[1].ability.name;
-  abilityarrey2 = [abilityThirdpoke1, abilityThirdpoke2];
+
+  let abilityarrey2 = [];
+  for (let i = 0; i < response.data.abilities.length; i++) {
+    abilityarrey2.push(response.data.abilities[i].ability.name);
+  }
+
   console.log(response.data.abilities);
   hpThirdpoke = response.data.stats[5].base_stat;
   imageThirdpoke = response.data.sprites.front_default;
 
+  //
+  let thirdpoke = new Pokemon(imageThirdpoke, nameThirdpoke, attackThirdpoke, defenceThirdpoke, abilityarrey2, hpThirdpoke, "imgpik", "pikabt", "avatar3", "att3", "");
+  Mikias.pokemon.push(thirdpoke);
+  function animation(){
+    console.log(window.scrollY);
+    if (window.scrollY >= 838){
+      thirdpoke.imageid = "pikabt3";
 
-  let thirdpoke = new Pokemon(imageThirdpoke, nameThirdpoke, attackThirdpoke, defenceThirdpoke, abilityarrey2, hpThirdpoke, "imgpik", "pikabt", "avatar3", "att3");
+    } else {
+      thirdpoke.display();
+    }
+  }
   thirdpoke.display();
+  window.addEventListener('scroll', animation);
 }
 
-axios.get("http://fizal.me/pokeapi/api/v2/id/45.json")
+axios.get("http://fizal.me/pokeapi/api/v2/id/14.json")
 .then(secondpoke);
 function secondpoke(response){
   console.log(response);
   nameSecpoke = response.data.name;
   defenceSecpoke = response.data.stats[3].base_stat;
   attackSecpoke = response.data.stats[4].base_stat;
-  let i = [];
-  abilitySecpoke1 = response.data.abilities[0].ability.name;
-  abilitySecpoke2 = response.data.abilities[1].ability.name;
-  abilityarrey1 = [abilitySecpoke1, abilitySecpoke2];
+  // let i = [];
+  let abspoke = [];
+
+  for (let i = 0; i < response.data.abilities.length; i++) {
+    abspoke.push(response.data.abilities[i].ability.name);
+  }
+
+  console.log(abspoke);
+
   console.log(response.data.abilities);
   hpSecpoke = response.data.stats[5].base_stat;
   imageSecpoke = response.data.sprites.front_default;
 
 
-  let secpoke = new Pokemon(imageSecpoke, nameSecpoke, attackSecpoke, defenceSecpoke, abilityarrey1, hpSecpoke, "imgpik", "secabt", "avatar2", "att2");
+  let secpoke = new Pokemon(imageSecpoke, nameSecpoke, attackSecpoke, defenceSecpoke, abspoke, hpSecpoke, "imgpik", "secabt", "avatar2", "att2","");
+  Mikias.pokemon.push(secpoke);
+  function animation(){
+    console.log(window.scrollY);
+    if (window.scrollY >= 428 && 1312 >= window.scrollY){
+      secpoke.imageid = "pikabt2";
+
+    } else {
+      secpoke.display();
+    }
+  }
+
   secpoke.display();
+  window.addEventListener('scroll', animation);
 }
 
 
@@ -75,27 +108,29 @@ function picka(response){
   namePickachu = response.data.name;
   defencePickachu = response.data.stats[3].base_stat;
   attackPickachu = response.data.stats[4].base_stat;
-  let i = [];
-  abilityPickachu1 = response.data.abilities[0].ability.name;
-  abilityPickachu2 = response.data.abilities[1].ability.name;
-  abilityarrey = [abilityPickachu1, abilityPickachu2];
-  console.log(response.data.abilities);
+  let abilityarrey = [];
+  for (let i = 0; i < response.data.abilities.length; i++) {
+    abilityarrey.push(response.data.abilities[i].ability.name);
+  }
+
   // console log the array to see what youre working with
   hpPickachu = response.data.stats[5].base_stat;
   imagePickachu = response.data.sprites.front_default;
-  let pickachu = new Pokemon(imagePickachu, namePickachu, attackPickachu, defencePickachu, abilityarrey, hpPickachu, "imgpik", "pikabt", "avatar", "att" );
-  pickachu.display();
+  pickachu = new Pokemon(imagePickachu, namePickachu, attackPickachu, defencePickachu, abilityarrey, hpPickachu, "imgpik", "pikabt", "avatar", "att", "");
+
   Mikias.pokemon.push(pickachu);
 
-// function animation(){
-//   console.log(window.scrollY);
-//   if (94 <= window.scrollY){
-//   } else if(999 >= window.scroll){
-//     pickachu.display();
-//
-//   }
-// }
-// window.addEventListener('scroll', animation);
+  function animation(){
+    console.log(window.scrollY);
+    if (window.scrollY >= 26 && 877 >= window.scrollY){
+      pickachu.imageid = "pikabt1";
+
+    } else {
+      pickachu.display();
+    }
+  }
+  pickachu.display();
+  window.addEventListener('scroll', animation);
 }
 
 
@@ -120,6 +155,15 @@ class Trainer {
 
     this.pokemon = []; //store Pokemon objects
   }
+
+  all(){
+    
+
+  }
+  get(name){
+
+  }
+
     execute() {
     this.header.appendChild(this.train);
     this.header.appendChild(this.name);
@@ -137,14 +181,13 @@ class Trainer {
 
 }
 let Mikias = new Trainer("mikias.png", "Mikias Negesse", "trainme", "39 Oak ln, Pelham, nyc", "about");
-
 console.log(Mikias);
 Mikias.execute();
 
 console.log(window.scrollY);
 
 class Pokemon {
-  constructor(url, name, attack, defence, ability, hp, classimg, classul, divv, attt){
+  constructor(url, name, attack, defence, ability, hp, classimg, classul, divv, attt, imageid){
     this.url = url;
     this.attack = attack;
     this.defence = defence;
@@ -155,6 +198,7 @@ class Pokemon {
     this.classul = classul;
     this.divv = divv;
     this.attt = attt;
+    this.imageid = imageid;
 
 
     this.image = document.createElement('img');
@@ -179,14 +223,14 @@ class Pokemon {
     this.attacker.innerHTML = "Attack: " + this.attack;
     this.defensive.innerHTML = "Defence: " + this.defence;
 
-    for(i = 0; i < 2; i++){
-      this.able.innerHTML = "Ability: " + this.ability[0] + ", " + this.ability[1];
-    }
+      this.able.innerHTML = "Ability: " + this.ability.toString();
 
     this.healthpoints.innerHTML = "HP: " + this.hp;
     this.ul.className = this.classul;
     this.image.src = this.url;
     this.image.className = this.classimg;
+    this.ul.id = this.imageid;
+
 
   }
 

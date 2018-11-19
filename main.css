@@ -23,6 +23,7 @@ body {
   width:100%;
   display: inline-table;
 }
+
 .second {
   height: 400px;
   width: 100%;
@@ -48,18 +49,31 @@ body {
   font-size: 30px;
   font-family: fantasy;
 }
-
-.pikabt{
+#pikabt1{
   animation: slideInRight 1s forwards;
+}
+#pikabt2{
+  animation: slideInRight 1s forwards;
+}
+#pikabt3{
+  animation: slideInRight 1s forwards;
+}
+.pikabt li{
   font-size: 30px;
   font-family: fantasy;
   color: white;
+  animation: flash 1s infinite;
+  margin-left: 100px;
 }
-.secabt {
+#secabt {
   animation: slideInRight 1s forwards;
+}
+.secabt li {
   font-size: 30px;
   font-family: fantasy;
   color: black;
+  animation: flash 1s infinite;
+  margin-left: 100px;
 }
 ul{
   list-style-type: none;
@@ -78,8 +92,8 @@ ul{
 .imgpik{
   animation-name: slideInLeft;
   animation-duration: 1s;
-  height:300px;
-  width:300px;
+  height:400px;
+  width:400px;
   margin-left: 100px;
 }
 @keyframes zoomin {
@@ -122,4 +136,27 @@ ul{
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
+}
+@keyframes flash {
+  0% {
+    color: grey;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: yellow;
+  }
+  75% {
+    color: green;
+  }
+  100% {
+    color:grey;
+  }
+}
+@media only screen and(600px){
+*{
+  display: list-item;
+}
+
 }
