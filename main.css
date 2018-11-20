@@ -158,5 +158,13 @@ ul{
 *{
   display: list-item;
 }
+#pikabt1{
+  animation: none;
+}
+#pikabt2{
+  animation: none;
+}
+#pikabt3{
+  animation: none;
 
 }

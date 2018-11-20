@@ -157,10 +157,15 @@ class Trainer {
   }
 
   all(){
-    
+    return this.pokemon;
 
   }
   get(name){
+    let m =[];
+    for(let m = 0; m < this.pokemon.length; m++){
+      let name = m;
+      return this.pokemon[m];
+    }
 
   }
 
