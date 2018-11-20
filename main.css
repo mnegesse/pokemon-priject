@@ -10,7 +10,7 @@ body {
 }
 .about {
   animation-name: fadein;
-  animation-duration: 2s;
+  animation-duration: 4s;
   margin-left: 40%;
   font-size: 30px;
   font-family: fantasy;

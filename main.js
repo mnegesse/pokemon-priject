@@ -51,7 +51,7 @@ function thirdpoke(response){
   let thirdpoke = new Pokemon(imageThirdpoke, nameThirdpoke, attackThirdpoke, defenceThirdpoke, abilityarrey2, hpThirdpoke, "imgpik", "pikabt", "avatar3", "att3", "");
   Mikias.pokemon.push(thirdpoke);
   function animation(){
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     if (window.scrollY >= 838){
       thirdpoke.imageid = "pikabt3";
 
@@ -87,7 +87,7 @@ function secondpoke(response){
   let secpoke = new Pokemon(imageSecpoke, nameSecpoke, attackSecpoke, defenceSecpoke, abspoke, hpSecpoke, "imgpik", "secabt", "avatar2", "att2","");
   Mikias.pokemon.push(secpoke);
   function animation(){
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     if (window.scrollY >= 428 && 1312 >= window.scrollY){
       secpoke.imageid = "pikabt2";
 
@@ -113,7 +113,6 @@ function picka(response){
     abilityarrey.push(response.data.abilities[i].ability.name);
   }
 
-  // console log the array to see what youre working with
   hpPickachu = response.data.stats[5].base_stat;
   imagePickachu = response.data.sprites.front_default;
   pickachu = new Pokemon(imagePickachu, namePickachu, attackPickachu, defencePickachu, abilityarrey, hpPickachu, "imgpik", "pikabt", "avatar", "att", "");
@@ -121,7 +120,7 @@ function picka(response){
   Mikias.pokemon.push(pickachu);
 
   function animation(){
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     if (window.scrollY >= 26 && 877 >= window.scrollY){
       pickachu.imageid = "pikabt1";
 
@@ -161,10 +160,12 @@ class Trainer {
 
   }
   get(name){
-    let m =[];
+    // let m =[];
     for(let m = 0; m < this.pokemon.length; m++){
-      let name = m;
-      return this.pokemon[m];
+      // console.log(this.pokemon[m])
+      if(name === this.pokemon[m].name){
+        return this.pokemon[m];
+      }
     }
 
   }
@@ -189,7 +190,7 @@ let Mikias = new Trainer("mikias.png", "Mikias Negesse", "trainme", "39 Oak ln, 
 console.log(Mikias);
 Mikias.execute();
 
-console.log(window.scrollY);
+// console.log(window.scrollY);
 
 class Pokemon {
   constructor(url, name, attack, defence, ability, hp, classimg, classul, divv, attt, imageid){
