@@ -34,7 +34,7 @@ let abilityarrey2;
 
 let pickachu;
 
-axios.get("http://fizal.me/pokeapi/api/v2/id/27.json")
+axios.get("https://fizal.me/pokeapi/api/v2/id/27.json")
 .then(thirdpoke);
 function thirdpoke(response){
   console.log(response);
@@ -71,7 +71,7 @@ function thirdpoke(response){
   window.addEventListener('scroll', animation);
 }
 
-axios.get("http://fizal.me/pokeapi/api/v2/id/14.json")
+axios.get("https://fizal.me/pokeapi/api/v2/id/14.json")
 .then(secondpoke);
 function secondpoke(response){
   console.log(response);
@@ -113,7 +113,7 @@ function secondpoke(response){
 }
 
 
-axios.get("http://fizal.me/pokeapi/api/v2/id/25.json")
+axios.get("https://fizal.me/pokeapi/api/v2/id/25.json")
 .then(picka);
 function picka(response){
   console.log(response);
