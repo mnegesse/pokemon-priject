@@ -8,6 +8,10 @@ let imagePickachu;
 let i;
 let abilityarrey;
 let imageid1;
+let hpid;
+let attackerid;
+let defensiveid;
+let ableid;
 
 
 let nameSecpoke;
@@ -48,12 +52,16 @@ function thirdpoke(response){
   imageThirdpoke = response.data.sprites.front_default;
 
   //
-  let thirdpoke = new Pokemon(imageThirdpoke, nameThirdpoke, attackThirdpoke, defenceThirdpoke, abilityarrey2, hpThirdpoke, "imgpik", "pikabt", "avatar3", "att3", "");
+  let thirdpoke = new Pokemon(imageThirdpoke, nameThirdpoke, attackThirdpoke, defenceThirdpoke, abilityarrey2, hpThirdpoke, "imgpik", "pikabt", "avatar3", "att3", "", "", "", "", "");
   Mikias.pokemon.push(thirdpoke);
   function animation(){
     // console.log(window.scrollY);
     if (window.scrollY >= 838){
       thirdpoke.imageid = "pikabt3";
+      thirdpoke.hpid = "pikabit3hp";
+      thirdpoke.defensiveid = "pikabit3def";
+      thirdpoke.ableid = "pikabit3able";
+      thirdpoke.attackerid = "pikabit3att";
 
     } else {
       thirdpoke.display();
@@ -84,12 +92,16 @@ function secondpoke(response){
   imageSecpoke = response.data.sprites.front_default;
 
 
-  let secpoke = new Pokemon(imageSecpoke, nameSecpoke, attackSecpoke, defenceSecpoke, abspoke, hpSecpoke, "imgpik", "secabt", "avatar2", "att2","");
+  let secpoke = new Pokemon(imageSecpoke, nameSecpoke, attackSecpoke, defenceSecpoke, abspoke, hpSecpoke, "imgpik", "secabt", "avatar2", "att2", "", "", "", "", "");
   Mikias.pokemon.push(secpoke);
   function animation(){
     // console.log(window.scrollY);
     if (window.scrollY >= 428 && 1312 >= window.scrollY){
       secpoke.imageid = "pikabt2";
+      secpoke.hpid = "pikabit2hp";
+      secpoke.defensiveid = "pikabit2def";
+      secpoke.ableid = "pikabit2able";
+      secpoke.attackerid = "pikabit2att";
 
     } else {
       secpoke.display();
@@ -115,7 +127,7 @@ function picka(response){
 
   hpPickachu = response.data.stats[5].base_stat;
   imagePickachu = response.data.sprites.front_default;
-  pickachu = new Pokemon(imagePickachu, namePickachu, attackPickachu, defencePickachu, abilityarrey, hpPickachu, "imgpik", "pikabt", "avatar", "att", "");
+  pickachu = new Pokemon(imagePickachu, namePickachu, attackPickachu, defencePickachu, abilityarrey, hpPickachu, "imgpik", "pikabt", "avatar", "att", "", "", "", "", "");
 
   Mikias.pokemon.push(pickachu);
 
@@ -123,6 +135,10 @@ function picka(response){
     // console.log(window.scrollY);
     if (window.scrollY >= 26 && 877 >= window.scrollY){
       pickachu.imageid = "pikabt1";
+      pickachu.hpid = "pikabithp";
+      pickachu.defensiveid = "pikabitdef";
+      pickachu.ableid = "pikabitable";
+      pickachu.attackerid = "pikabitatt";
 
     } else {
       pickachu.display();
@@ -193,7 +209,7 @@ Mikias.execute();
 // console.log(window.scrollY);
 
 class Pokemon {
-  constructor(url, name, attack, defence, ability, hp, classimg, classul, divv, attt, imageid){
+  constructor(url, name, attack, defence, ability, hp, classimg, classul, divv, attt, imageid, hpid, defensiveid, ableid, attackerid){
     this.url = url;
     this.attack = attack;
     this.defence = defence;
@@ -205,6 +221,10 @@ class Pokemon {
     this.divv = divv;
     this.attt = attt;
     this.imageid = imageid;
+    this.hpid = hpid;
+    this.defensiveid = defensiveid;
+    this.ableid = ableid;
+    this.attackerid = attackerid;
 
 
     this.image = document.createElement('img');
@@ -235,7 +255,11 @@ class Pokemon {
     this.ul.className = this.classul;
     this.image.src = this.url;
     this.image.className = this.classimg;
-    this.ul.id = this.imageid;
+    this.Name.id = this.imageid;
+    this.attacker.id = this.attackerid;
+    this.defensive.id = this.defensiveid;
+    this.able.id = this.ableid;
+    this.healthpoints.id = this.hpid;
 
 
   }

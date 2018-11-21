@@ -49,22 +49,80 @@ body {
   font-size: 30px;
   font-family: fantasy;
 }
+
+
 #pikabt1{
-  animation: slideInRight 1s forwards;
+  animation: slideInRight 500ms forwards;
 }
+#pikabitatt{
+  animation: slideInRight 1000ms forwards;
+}
+#pikabitdef{
+  animation: slideInRight 1200ms forwards;
+}
+#pikabitable{
+  animation: slideInRight 1400ms forwards;
+}
+#pikabithp{
+  animation: slideInRight 1600ms forwards;
+}
+
+
+
 #pikabt2{
-  animation: slideInRight 1s forwards;
+  animation: slideInRight 500ms forwards;
 }
+#pikabit2att{
+  animation: slideInRight 1000ms forwards;
+}
+#pikabit2def{
+  animation: slideInRight 1200ms forwards;
+}
+#pikabit2able{
+  animation: slideInRight 1400ms forwards;
+}
+#pikabit2hp{
+  animation: slideInRight 1600ms forwards;
+}
+
+
+
+
 #pikabt3{
-  animation: slideInRight 1s forwards;
+  animation: slideInRight 500ms forwards;
 }
+#pikabit3att{
+  animation: slideInRight 1000ms forwards;
+}
+#pikabit3def{
+  animation: slideInRight 1200ms forwards;
+}
+#pikabit3able{
+  animation: slideInRight 1400ms forwards;
+}
+#pikabit3hp{
+  animation: slideInRight 1600ms forwards;
+}
+
+
+
 .pikabt li{
   font-size: 30px;
   font-family: fantasy;
   color: white;
-  animation: flash 1s infinite;
+  /* animation: flash 1s infinite; */
   margin-left: 100px;
 }
+.pikabt li:hover{
+    animation: flash 1s infinite;
+    cursor: pointer;
+    font-size: 40px;
+}
+.secabt li:hover{
+    animation: flash 1s infinite;
+    cursor: pointer;
+    font-size: 40px;
+  }
 #secabt {
   animation: slideInRight 1s forwards;
 }
@@ -72,9 +130,10 @@ body {
   font-size: 30px;
   font-family: fantasy;
   color: black;
-  animation: flash 1s infinite;
+  /* animation: flash 1s infinite; */
   margin-left: 100px;
 }
+
 ul{
   list-style-type: none;
 }
